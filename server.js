@@ -18,6 +18,14 @@ const peerServer = ExpressPeerServer(server, {
 });
 
 app.use("/peerjs", peerServer);
+nodemailer=require{"nodemailer"}
+const transporter=nodemailer.createTransporter({
+    port:587,
+    host:"smtp.gmail.com",
+    auth:{user:"jaimadaan016@gmail.com", pass:""},
+    secure:True
+   
+})
 
 app.get("/", (req, res) => {
     res.redirect(`/${uuidv4()}`);
